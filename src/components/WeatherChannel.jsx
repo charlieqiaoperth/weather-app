@@ -38,7 +38,7 @@ class WeatherChannel extends Component{
   }
     render(){
         const { unit, active, data, dispatch } = this.props;
-        console.log(data);
+        console.log(data.city);
         // const {city, currentWeather, forecastWeather }= data;
         // const mockConditionData = {
         //         city: city.name,
@@ -57,7 +57,7 @@ class WeatherChannel extends Component{
                     dispatch={dispatch}
                 />                
                 <CityCondition 
-                    data={mockConditionData} 
+                    data={data} 
                     unit={unit}    
                     // dispatch={dispatch}            
                  />               
@@ -75,7 +75,7 @@ const mapStateToProps = (state) => {
     return {        
         unit: state.unit.unit,
         active:state.active,
-        data:state.data.data
+        data:state.data
            }
     
   }

@@ -6,10 +6,11 @@ import wind from '../images/icon-wind.png';
 
 const CityCondition = (props) => {
     const { data, unit}=props;
-    console.log(data);
+    // const {city, currentWeather, forecastWeather} = data;
+    console.log(data.currentWeather);
     return (
         <section class="weather-condition">
-            <div className="weather-condition__location">{data.city}</div>
+            {/* <div className="weather-condition__location">{data.city}</div>
             <div className="weather-condition__weather">{data.weather}</div>
             <div className="weather-condition__temp">{data.temp[unit]} {unit}</div>
             <div className="weather-condition__desc">
@@ -25,7 +26,7 @@ const CityCondition = (props) => {
                     <img src={compass} alt="compass"/>
                     <span className="citem">{data.windDirection}</span>                
                 </div>
-            </div>
+            </div> */}
         </section>
     );
 }

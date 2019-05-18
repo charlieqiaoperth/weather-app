@@ -40,8 +40,8 @@ export const getDataFromServer = (city,country) => {
         //   }
           )
           .then(response =>{
-            // console.log(response);
-            dispatch(getDataSuccess(response.data))
+            // console.log(response.data);
+            dispatch(getDataSuccess(response.data.data))
           })
           .catch(error =>{
             //   dispatch(getDataFail());
