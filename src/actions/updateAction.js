@@ -3,32 +3,21 @@ import locationUpdate from './locationAction';
 
 export const UPDATE = 'UPDATE';
 
-// const update = (rawData) => {
-//     return {
-//         type: UPDATE,
-//         payload: {rawData}
-//     };
-// }
-
 
 
 const getDataSuccess = (city,currentWeather,forecastWeather)=>{
-    // const { city, currentWeather, forecastWeather } = rawData.data;
+   
     return {
-        type: UPDATE,
-        // payload:{rawData}
+        type: UPDATE,        
         payload: {
             city:{city},
             currentWeather:{currentWeather},
             forecastWeather:{forecastWeather}
         }
-    };
-    // console.log(rawData.data);
+    };    
 } 
 
-// const getDataFail=() =>{
 
-// }
 
 export const getDataFromServer = (city,country) => {
     return (dispatch) =>{ 
@@ -42,7 +31,7 @@ export const getDataFromServer = (city,country) => {
         //   }
           )
           .then(response =>{
-            console.log(response.data.data.city);
+            // console.log(response.data.data.city);
             dispatch(getDataSuccess(response.data.data.city,response.data.data.currentWeather,response.data.data.forecastWeather))
             // console.log(response.data.data);
 
@@ -54,5 +43,5 @@ export const getDataFromServer = (city,country) => {
     }
 }
 
-// export default;
+
 

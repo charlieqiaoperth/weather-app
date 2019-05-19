@@ -6,11 +6,10 @@ import wind from '../images/icon-wind.png';
 
 const CityCondition = (props) => {
     const { data, unit}=props;
-    const {city, currentWeather} = data;
-    console.log(city.country);
+    const {city, currentWeather} = data;   
     const temp = {C:currentWeather.tempCelsius,F:currentWeather.tempFahrenheit};
     return (
-        <section class="weather-condition">
+        <section className="weather-condition">
             <div className="weather-condition__location">{city.name},{city.country}</div>
             <div className="weather-condition__weather">{currentWeather.weather}</div>
             <div className="weather-condition__temp">{temp[unit]} {unit}</div>

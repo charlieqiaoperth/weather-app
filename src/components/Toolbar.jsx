@@ -14,25 +14,9 @@ class Toolbar extends Component {
    }
 
    onSearch = (e) => {
-    e.preventDefault();
-    
-    this.props.dispatch(getDataFromServer(this.state.city,this.state.country))
-    // axios({
-    //     method: 'post',
-    //     url: 'https://posts-api-test.herokuapp.com/v1/posts',
-    //     data: {
-    //       author: this.state.author,
-    //       content:this.state.content
-    //     }
-    //   })
-    //   .then((response) => {
-    //     this.props.dispatch(getWelcomeAsync())
-    //   })
-      
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   })
-}
+    e.preventDefault();    
+    this.props.dispatch(getDataFromServer(this.state.city,this.state.country)) 
+    }
 
     onCityChange = (e) => {
         this.setState({city:e.target.value});
