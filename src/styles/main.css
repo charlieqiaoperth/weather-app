@@ -79,14 +79,14 @@
     background-color: #1e202b;
     color: #fff;
     padding: 0.5rem 1rem;
-    width: 180px;
+    width: 120px;
   }
   .search-btn {
     border: none;
     background-color: transparent;
     cursor: pointer;
     color: white;
-    margin-left: -39px;
+    margin-left: 5px;
   }
   .temp-switch {
     color: #fff;

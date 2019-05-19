@@ -7,14 +7,14 @@ import Forecast from './Forecast';
 import {getDataFromServer} from '../actions/updateAction';
 
 
-const mockConditionData = {
-    city: 'Sydney, Australia',
-    weather: 'sunny',    
-    temp: {C:29, F:70},
-    humidity: 29,
-    windSpeed: 5,
-    windDirection:'NE',
-  };
+// const mockConditionData = {
+//     city: 'Sydney, Australia',
+//     weather: 'sunny',    
+//     temp: {C:29, F:70},
+//     humidity: 29,
+//     windSpeed: 5,
+//     windDirection:'NE',
+//   };
   
   
   const mockForecastData = [
@@ -32,34 +32,21 @@ const mockConditionData = {
   
 
 class WeatherChannel extends Component{
-
+ 
      componentDidMount() {
-     this.props.dispatch(getDataFromServer("perth","AU"));
+     this.props.dispatch(getDataFromServer(this.props.location.city,this.props.location.country));    
   }
     render(){
-        const { unit, active, data, dispatch } = this.props;
-        console.log(data.city);
-        // const {city, currentWeather, forecastWeather }= data;
-        // const mockConditionData = {
-        //         city: city.name,
-        //         weather: 'sunny', //待修改   
-        //         temp: {C:currentWeather.minCelsius, F:currentWeather.minFahrenheit},
-        //         humidity: currentWeather.humidity,
-        //         windSpeed: 5,//待修改
-        //         windDirection:currentWeather.windDirection,
-        //       };
-
-
+        const { unit, active,data, dispatch } = this.props;       
         return(
             <main>
                 <Toolbar 
                     unit={unit}
                     dispatch={dispatch}
-                />                
+                                    />                
                 <CityCondition 
                     data={data} 
-                    unit={unit}    
-                    // dispatch={dispatch}            
+                    unit={unit}                               
                  />               
                 <Forecast 
                     data={mockForecastData}                     
@@ -75,7 +62,8 @@ const mapStateToProps = (state) => {
     return {        
         unit: state.unit.unit,
         active:state.active,
-        data:state.data
+        data:state.data,
+        location:state.location
            }
     
   }

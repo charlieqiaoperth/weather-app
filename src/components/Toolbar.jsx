@@ -1,8 +1,50 @@
-import React from 'react';
+import React, {Component}from 'react';
 import switchUnit from '../actions/unitAction'
+// import locationUpdate from '../actions/locationAction';
+import { getDataFromServer } from '../actions/updateAction';
 
-const Toolbar =(props) => {
-    const { unit,dispatch} =props;
+
+class Toolbar extends Component {
+   constructor(props) {
+       super(props);
+       this.state= {
+           city:'',
+           country:'',
+       }
+   }
+
+   onSearch = (e) => {
+    e.preventDefault();
+    
+    this.props.dispatch(getDataFromServer(this.state.city,this.state.country))
+    // axios({
+    //     method: 'post',
+    //     url: 'https://posts-api-test.herokuapp.com/v1/posts',
+    //     data: {
+    //       author: this.state.author,
+    //       content:this.state.content
+    //     }
+    //   })
+    //   .then((response) => {
+    //     this.props.dispatch(getWelcomeAsync())
+    //   })
+      
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   })
+}
+
+    onCityChange = (e) => {
+        this.setState({city:e.target.value});
+    }
+
+    onCountryChange = (e) => {
+        this.setState({country:e.target.value});
+    }
+      
+   render() {
+    const {unit, dispatch} = this.props;
+   
     const swapTempUnit = () => {
             
         if (unit==="C") {
@@ -10,14 +52,25 @@ const Toolbar =(props) => {
         }
         return ("C");            
     }
-   
-
+      
     return (
         <nav>
-            <form className="search-input" action=""></form>            
+            <form  onSubmit={this.onSearch}>
+                <label >
+                    City : 
+                    <input className="search-input" type="text" name="city" value={this.state.city} onChange={this.onCityChange}/>
+                </label>
+                <label>
+                    Country : 
+                    <input className="search-input" type="text" name="country" value={this.state.country} onChange={this.onCountryChange}/>
+                </label  >
+                     <input className="search-btn" type="submit" value="Search"/>
+            
+            </form>            
             <button onClick={()=>dispatch(switchUnit(swapTempUnit()))} className="temp-switch">°{unit}</button>
         </nav>
     );
+}
 }
 
 export default Toolbar;
