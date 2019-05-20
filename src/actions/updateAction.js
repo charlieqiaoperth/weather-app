@@ -21,7 +21,7 @@ const getDataSuccess = (city,currentWeather,forecastWeather)=>{
 
 export const getDataFromServer = (city,country) => {
     return (dispatch) =>{ 
-         dispatch(locationUpdate({city},{country}))     
+         dispatch(locationUpdate(city,country))     
         axios.get(`https://weather-server-api.herokuapp.com/api/weather/${country}/${city}`
         // , {
         //     params: {

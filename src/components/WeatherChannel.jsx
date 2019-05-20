@@ -15,6 +15,7 @@ class WeatherChannel extends Component{
 
     render(){
         const { unit, active,data, dispatch } = this.props;       
+        // console.log(this.props.location);
         return(
             <main>
                 <Toolbar 

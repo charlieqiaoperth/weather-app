@@ -2,6 +2,7 @@ import React, {Component}from 'react';
 import switchUnit from '../actions/unitAction'
 // import locationUpdate from '../actions/locationAction';
 import { getDataFromServer } from '../actions/updateAction';
+import locationUpdate from '../actions/locationAction';
 
 
 class Toolbar extends Component {
@@ -14,7 +15,8 @@ class Toolbar extends Component {
    }
 
    onSearch = (e) => {
-    e.preventDefault();    
+    e.preventDefault(); 
+    // console.log(this.state);   
     this.props.dispatch(getDataFromServer(this.state.city,this.state.country)) 
     }
 

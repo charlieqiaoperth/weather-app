@@ -8,7 +8,7 @@ const defaultState = {
 const location = (state = defaultState, action) => {
     switch (action.type) {
         case LOCATION :
-        return Object.assign({}, state, action.payload.location);        
+        return Object.assign({}, state,{city:action.payload.city.city,country:action.payload.country.country});        
         default:
             return state;
     }        

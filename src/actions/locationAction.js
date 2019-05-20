@@ -1,11 +1,12 @@
 export const LOCATION = "LOCATION";
 
 
-const location = (location) => {
+const location = (city,country) => {
     return {
         type: LOCATION,
         payload: {
-            location
+           city: {city},
+           country:{country}
         }
     };
 }
