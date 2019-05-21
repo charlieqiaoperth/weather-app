@@ -1,8 +1,8 @@
-
+export const ACTIVE = "ACTIVE"
 
 const swtichItem = (active) => {
     return {
-        type: "ACTIVE",
+        type: ACTIVE,
         payload: {active}
     };
 }

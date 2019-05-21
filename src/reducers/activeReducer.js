@@ -1,3 +1,5 @@
+import { ACTIVE } from '../actions/activeAction';
+
 const defaultState = {
     itemFewClass:"forecast__switch_0 switch-active",
     itemMoreClass:"forecast__switch_1",
@@ -6,7 +8,7 @@ const defaultState = {
 
 const active = (state = defaultState, action) => {
     switch (action.type) {
-        case "ACTIVE" :
+        case ACTIVE :
         return Object.assign({}, state, action.payload.active);        
         default:
             return state;

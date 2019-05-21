@@ -1,4 +1,4 @@
-import {LOCATION} from '../actions/locationAction';
+import { LOCATION } from '../actions/locationAction';
 
 const defaultState = {
     city:"Perth",

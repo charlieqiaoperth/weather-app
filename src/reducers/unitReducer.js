@@ -1,10 +1,11 @@
-// import TO_CELSIUS from '../actions/unitAction';
-// import TO_FAHRENHEIT from '../actions/unitAction';
+import SWITCH_UNIT from '../actions/unitAction';
+
+
 const defaultState = {unit:"C"};
 
 const unit = (state = defaultState,action) => {
     switch (action.type) {
-        case "SWITCH_UNIT" :
+        case SWITCH_UNIT :
         return Object.assign({}, state, {unit: action.payload.unit});
         default:
             return state;
