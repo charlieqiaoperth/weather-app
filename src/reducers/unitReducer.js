@@ -1,4 +1,4 @@
-import SWITCH_UNIT from '../actions/unitAction';
+import { SWITCH_UNIT } from '../actions/unitAction';
 
 
 const defaultState = {unit:"C"};

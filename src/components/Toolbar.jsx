@@ -2,7 +2,7 @@ import React, {Component}from 'react';
 import switchUnit from '../actions/unitAction'
 // import locationUpdate from '../actions/locationAction';
 import { getDataFromServer } from '../actions/updateAction';
-import locationUpdate from '../actions/locationAction';
+// import locationUpdate from '../actions/locationAction';
 
 
 class Toolbar extends Component {
@@ -30,6 +30,7 @@ class Toolbar extends Component {
       
    render() {
     const {unit, dispatch} = this.props;
+    console.log(unit);
    
     const swapTempUnit = () => {
             
