@@ -2,7 +2,7 @@
   "name": "weather-app",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "https://charlieqiaoperth.github.io/weather-app/docs/",
+  "homepage" : "https://charlieqiaoperth.github.io/weather-app/",
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.8.6",
